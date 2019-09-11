@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'package:json_annotation/json_annotation.dart';
-
+//este archivo se genero ejecutando: $ flutter packages pub run build_runner build 
 part 'locations.g.dart';
 
 @JsonSerializable()
@@ -79,7 +79,7 @@ class Locations {
 }
 
 Future<Locations> getGoogleOffices() async {
-  const googleLocationsURL = 'https://about.google/static/data/locations.json';
+  const googleLocationsURL = 'https://fluttermaps-bf23b.firebaseio.com/.json';
 
   // Retrieve the locations of Google offices
   final response = await http.get(googleLocationsURL);

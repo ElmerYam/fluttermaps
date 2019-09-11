@@ -1,5 +1,4 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-//este archivo se genero ejecutando: $ flutter packages pub run build_runner build 
 
 part of 'locations.dart';
 

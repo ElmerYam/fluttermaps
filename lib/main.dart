@@ -14,6 +14,7 @@ class _MyAppState extends State<MyApp> {
   final Map<String, Marker> _markers = {};
   Future<void> _onMapCreated(GoogleMapController controller) async {
     final googleOffices = await locations.getGoogleOffices();
+
     setState(() {
       _markers.clear();
       for (final office in googleOffices.offices) {
@@ -34,14 +35,14 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) => MaterialApp(
         home: Scaffold(
           appBar: AppBar(
-            title: const Text('Google Office Locations'),
-            backgroundColor: Colors.green[700],
+            title: const Text('Ubicaciones de Centros de Salud'),
+            backgroundColor: Colors.blue[700],
           ),
           body: GoogleMap(
             onMapCreated: _onMapCreated,
             initialCameraPosition: CameraPosition(
-              target: const LatLng(0, 0),
-              zoom: 2,
+              target: const LatLng(19.775877, -87.842860),
+              zoom: 7.5,
             ),
             markers: _markers.values.toSet(),
           ),
